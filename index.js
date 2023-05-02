@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
-var alarm = 0;
+var alarm = "0";
 
 app.use(
     cors({
@@ -14,27 +15,28 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.send("Home page")
+    // res.send("")
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/on', (req, res) => {
-    alarm = 1;
-    res.send("Turned On")
+    alarm = "1";
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/off', (req, res) => {
-    alarm = 0;
-    res.send("Turned Off")
+    alarm = "0";
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/1', (req, res) => {
-    alarm = 1;
-    res.send("Turned On")
+    alarm = "1";
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/0', (req, res) => {
-    alarm = 0;
-    res.send("Turned Off")
+    alarm = "0";
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/alarm', (req, res) => {
