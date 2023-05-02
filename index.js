@@ -38,7 +38,7 @@ app.get('/0', (req, res) => {
 });
 
 app.get('/alarm', (req, res) => {
-    res.send({"alarm" : alarm});
+    res.send(alarm);
 });
 
 app.get('/api', (req, res) => { //esp reads
